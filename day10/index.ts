@@ -1,4 +1,3 @@
-import { sleepSync } from "bun";
 import { readFileSync } from "fs";
 import { resolve } from "path";
 
@@ -9,7 +8,6 @@ const grid: string[][] = data
     .split("\n")
     .slice(0, -1)
     .map((s) => s.split(""));
-const width = grid[0].length;
 
 enum Dir {
     UP,
@@ -78,7 +76,7 @@ function calcPartTwo(): number {
 }
 
 function id(row: number, col: number): number {
-    return row * width + col;
+    return row * grid[0].length+ col;
 }
 
 /** returns loop and the grid with S replaced with correct symbol */
